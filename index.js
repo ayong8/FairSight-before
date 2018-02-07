@@ -1,3 +1,4 @@
+// Prepraration to move on to the react
 var svg = d3.select("#plot")
             .append("svg")
             .attr("width", "100%")
