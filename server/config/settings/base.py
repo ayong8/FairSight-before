@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'rest_framework',
+    'corsheaders',
 ]
 
 # Apps specific for this project go here.
@@ -68,6 +69,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -191,6 +193,7 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('my-app', 'build', 'static'))
     #normpath(join(BASE_DIR, 'static')),
 ]
 
@@ -276,3 +279,4 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+CORS_ORIGIN_ALLOW_ALL = True

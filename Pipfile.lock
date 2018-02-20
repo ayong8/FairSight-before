@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "562234220555bd8dab0a79f2678c100530e0fe539c9c549a5c389c8688d1db2c"
+            "sha256": "71f86dd4a8a7fd8d5ec0383e333e7e7fcec229bfbd22131eff240a4e51da23e7"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -214,6 +214,13 @@
             ],
             "version": "==0.35.0"
         },
+        "django-cors-headers": {
+            "hashes": [
+                "sha256:4e02be61ffaaab5917f1fd7cc3c305c4fb7ccd0156a649c96f49bc0a09c5f572",
+                "sha256:451bc37a514792c2b46c52362368f7985985933ecdbf1a85f82652579a5cbe01"
+            ],
+            "version": "==2.1.0"
+        },
         "django-coverage-plugin": {
             "hashes": [
                 "sha256:84b247a39885e59fa018b6b9ba07b034d2cb7df68c6ef372b2df90fe29272d69"
@@ -290,6 +297,7 @@
                 "sha256:8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1",
                 "sha256:2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850"
             ],
+            "markers": "python_version == '2.7'",
             "version": "==1.1.6"
         },
         "factory-boy": {
@@ -380,7 +388,7 @@
                 "sha256:db3e43032d23787d3e9aec8c7ef1e0d2c3c589d5f303477661ebda2ca6d4bfba",
                 "sha256:d32550b75a818b289bd4c1f96b60c89957811da205afcceab75bc8b4857ea5b3"
             ],
-            "markers": "python_version == '2.7' or python_version == '3.3'",
+            "markers": "python_version in '2.6 2.7 3.2 3.3'",
             "version": "==2.3.0"
         },
         "pexpect": {

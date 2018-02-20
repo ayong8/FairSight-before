@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from server import views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
@@ -18,6 +19,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'^data/', include('server.data.urls', namespace='data')),
+    url(r'^', views.ReactAppView.as_view()),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
