@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <header className={styles.App__header}>
-          <img src={logo} className={styles.App__logo} alt="logo" />
           <h1 className={styles.App__title}>Welcome to React</h1>
         </header>
         <Vis />
