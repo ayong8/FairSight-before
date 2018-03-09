@@ -1,22 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Link } from 'rect-router-dom';
 import styles from './App.scss';
 import Vis from './Vis.js';
 
-class App extends Component {
-  render() {
-    return (
-      <div className={styles.App}>
-        <header className={styles.App__header}>
-          <h1 className={styles.App__title}>Welcome to React</h1>
-        </header>
-        <Vis />
-        <p className={styles.App__intro}>
-          To get started, edit <code>src/App.js</code> and save to reload hohoho.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Header />
+  </div>
+);
+
+const Header = () => (
+  <header>
+    <h1>My Contacts</h1>
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/contacts">Contacts</Link>
+      </li>
+    </ul>
+    <Route exact path="/" component={Welcome} />
+    <Route path="/contacts" component={Contacts} />
+  </header>
+);
+
+const Welcome = ({ match }) => <h1>Welcome to our app</h1>;
+
+const Contacts = ({ match }) => (
+  <div>
+    <ul>
+      <li>Lynn</li>
+    </ul>
+  </div>
+);
 
 export default App;
