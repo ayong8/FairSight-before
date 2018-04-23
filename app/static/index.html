@@ -18,32 +18,43 @@
 	<body>
 		<div style="width: 1280px; height: 900px; margin: 0 auto;">
 
-			<div style="width: 312px; float: left;">
-				<div style="width: 300px; margin: 4px">
+			<div style="width: 400px; float: left;">
+				<div style="width: 400px; margin: 4px">
 					<div class="toolbar ui-widget-header ui-corner-all">
 						<label class="toolbar_label">Overview:</label>
 					</div>
 					<div id="overview" class="ui-widget-content ui-corner-all no_selection"></div>
 				</div>
-				<div id="tablists" style="width: 300px; margin: 4px">
+				<div id="tablists" style="width: 390px; margin: 4px">
 					<ul>
-						<li><a href="#vview1" class="toolbar_label">Vertical View1</a></li>
+						<li><a href="#vview1" class="toolbar_label">Ranking List</a></li>
    						<li><a href="#vview2" class="toolbar_label">Vertical View2</a></li>
   					</ul>
 					<div id="vview1" class="ui-widget-content ui-corner-all"></div>
 					<div id="vview2" class="ui-widget-content ui-corner-all no_selection"></div>
 				</div>
 			</div>
-			<div style="width: 968px; float: left;">
+			<div style="width: 850px; float: left;">
 				<div style="width: 960px; margin: 4px">
-					<div class="toolbar ui-widget-header ui-corner-all">
-						<span class="ui-widget" style="float: left;">
-								Dataset:
-								<select id="dataset" onchange="display()">
-								</select>
-						</span>
+					<div style="height: 50px" class="toolbar ui-widget-header ui-corner-all">
+						<div>
+							<span class="ui-widget">
+									Dataset:
+									<select id="dataset" onchange="display()">
+									</select>
+							</span>
+						</div>
+						<div>
+							<span>SVM</span>
+						</div>
 					</div>
-					<div id="mainview" style="margin-top:-4px;" class="ui-widget-content ui-corner-all no_selection"></div>
+					<div id="mainview" style="margin-top:-4px;" class="ui-widget-content ui-corner-all no_selection">
+						<div id="mainview_plot" style="width:55%; height:100%; float:left"></div>
+						<div id="mainview_wrapper" style="width:45%; height:100%; float:left">
+							<div id="mainview_comparison" style="height:50%"></div>
+							<div id="mainview_comparison" style="height:50%"></div>
+						</div>
+					</div>
 				</div>
 				<div id="tabs" style="width: 960px; margin: 4px">
 					<ul>
@@ -60,7 +71,9 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/vis.js"></script>
+		<script type="text/javascript" src="js/overview.js"></script>
 		<script type="text/javascript" src="js/component.js"></script>
+		<script type="text/javascript" src="js/ranking_instance.js"></script>
 		<script type="text/javascript" src="js/driver.js"></script>
 		<br>
 		<br>

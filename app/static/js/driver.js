@@ -2,16 +2,10 @@
 	System Driver
 	Author : Nan Cao (nancao.org)
 */
-var component = vis.component().size([940, 580]);
-
-d3.json("data/german_credit_sample.json", function(error, json) {
-	if (error) {
-		console.log(error)
-		return;
-	}
-	console.log(json);
-	component.data(json).layout().render();
-});
+var component = vis.component().size([940, 580]),
+	component2 = vis.component2().size([940, 580]),
+	verticalView = vis.component3().size([300, 580]),
+	overview = vis.overview().size([300, 300]);
 
 // layout UI and setup events
 $(document).ready(function() {
@@ -48,24 +42,23 @@ function display() {
 		return;
 	}
 	
-	component.container(d3.select("#mainview").append("svg"))
+	component.container(d3.select("#hview1").append("svg").attr("class", "svg_hview"));
+	component2.container(d3.select("#mainview_plot").append("svg").attr("class", "svg_mainview"));
+	verticalView.container(d3.select("#vview1").append("svg").attr("class", "svg_vview"));
+	overview.container(d3.select("#overview").append("svg").attr("class", "svg_overview"));
+	
 	
 	var url = "data/" + "us-state-centroids.json";
-	console.log("file name?:", url);
-	// d3.json(url)
-	// 	.get(function(err, json) {
-	// 		if (err) return console.error(err);
-	// 		console.log(json);
-	// 		component.data(json).layout().render();
-	// 	});
 	
 	d3.json("https://dl.dropboxusercontent.com/s/xyrgiyop23ql0t8/german_credit_sample.json?dl=1", function(error, jsondata) {
 		if (error) {
 			console.log(error)
 			return;
 		}
-		console.log(jsondata);
 		component.data(jsondata).layout().render();
+		component2.data(jsondata).layout().render();
+		verticalView.data(jsondata).layout().render();
+		overview.data(jsondata).layout().render();
 	});
 };
 
